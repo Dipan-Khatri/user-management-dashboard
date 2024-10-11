@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
 export function Sidebar() {
   const navigate = useNavigate(); // Initialize the useNavigate hook
@@ -6,6 +6,8 @@ export function Sidebar() {
   // Function to handle navigation
   const handleNavigation = (path: string) => {
     navigate(path);
+    const{ pathname} =useLocation();
+    console.log({pathname});
   };
 
   return (
